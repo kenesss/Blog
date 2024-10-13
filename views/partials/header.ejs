@@ -1,0 +1,31 @@
+<header>
+    <div class="head-logo">
+        <a href="/">
+            <h1>Decode Blog</h1>
+        </a>
+    </div>
+    <form class="head-search">
+        <input type="text" name="search" placeholder="Поиск по блогам">
+        <button class="btn">
+            <img src="/img/icon/search.png" alt="">
+            <p>Найти</p>
+        </button>
+    </form>
+    <div class="head-button">
+        <%
+            if(user._id && user.full_name.length > 0){
+        %>
+            <a href="/api/signout" class="buttons">Выход</a>
+            <a href="/profile/<%=user._id%>">
+                <img src="/img/avatar.png" alt="" class="profile-img">
+            </a>
+        <%
+            }else{
+        %>
+            <a href="/regester" class="buttons">Регистрация</a>
+            <a href="/login" class="buttons">Войти</a>
+        <%
+            }
+        %>
+    </div>
+</header>
